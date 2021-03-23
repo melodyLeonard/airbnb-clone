@@ -47,14 +47,16 @@ const styles = StyleSheet.create<Styles>({
     height: 60,
     marginHorizontal: 10,
     flexDirection: 'row',
-    justifyContent: 'center',
+    paddingHorizontal: marginLeft / 1.2,
     alignItems: 'center',
     borderRadius: 30,
     position: 'absolute',
     top: 50,
-    zIndex: 100,
+    zIndex: 1000,
   },
-  searchButtonText: {},
+  searchButtonText: {
+    marginLeft: marginLeft,
+  },
 });
 
 export default styles;
