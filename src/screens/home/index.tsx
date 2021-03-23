@@ -5,7 +5,7 @@ import styles from './styles';
 import {SIZES} from '../../Constants/Sizes';
 import {Colors} from '../../Constants/Colors';
 
-const HomeScreen: React.FC = () => {
+const HomeScreen: React.FC = (): JSX.Element => {
   return (
     <View>
       <ImageBackground

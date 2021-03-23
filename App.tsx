@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import {SafeAreaView, StatusBar} from 'react-native';
-import Feed from './src/components/feeds';
-import HomeScreen from './src/screens/home';
+import Posts from 'screens/post';
+// import HomeScreen from './src/screens/home';
 
 const App: FC = () => {
   const isDarkMode: boolean = false;
@@ -10,7 +10,7 @@ const App: FC = () => {
     <SafeAreaView>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       {/* <HomeScreen /> */}
-      <Feed />
+      <Posts />
     </SafeAreaView>
   );
 };
