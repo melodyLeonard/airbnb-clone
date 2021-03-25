@@ -3,7 +3,7 @@ import React from 'react';
 import {FlatList} from 'react-native';
 import {feedData} from '../../assets/data/feed';
 
-const Posts: React.FC = (): JSX.Element => {
+const PostsScreen: React.FC = (): JSX.Element => {
   return (
     <FlatList
       keyExtractor={item => item.id}
@@ -15,4 +15,4 @@ const Posts: React.FC = (): JSX.Element => {
   );
 };
 
-export default Posts;
+export default PostsScreen;

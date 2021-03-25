@@ -1,18 +1,8 @@
+import 'react-native-gesture-handler';
 import React, {FC} from 'react';
-import {SafeAreaView, StatusBar} from 'react-native';
-import Posts from 'screens/post';
-// import HomeScreen from './src/screens/home';
+import RootNavigation from './src/navigation';
 
 const App: FC = () => {
-  const isDarkMode: boolean = false;
-
-  return (
-    <SafeAreaView>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      {/* <HomeScreen /> */}
-      <Posts />
-    </SafeAreaView>
-  );
+  return <RootNavigation />;
 };
-
 export default App;

@@ -1,6 +1,6 @@
 import {ImageStyle, StyleSheet, TextStyle, ViewStyle} from 'react-native';
-import {Colors} from '../../Constants/Colors';
-import {SIZES} from '../../Constants/Sizes';
+import {SIZES} from '../../Constants/theme/Sizes';
+import {COLORS} from '../../Constants/theme/Colors';
 
 interface Styles {
   button: ViewStyle;
@@ -23,12 +23,12 @@ const styles = StyleSheet.create<Styles>({
   title: {
     fontSize: 80,
     fontWeight: 'bold',
-    color: Colors.white,
+    color: COLORS.white,
     width: '70%',
     marginLeft: marginLeft,
   },
   button: {
-    backgroundColor: Colors.white,
+    backgroundColor: COLORS.white,
     width: 200,
     height: 50,
     borderRadius: 10,
@@ -42,8 +42,8 @@ const styles = StyleSheet.create<Styles>({
     fontWeight: 'bold',
   },
   searchButton: {
-    backgroundColor: Colors.white,
-    width: SIZES.sn_WIDTH - 20,
+    backgroundColor: COLORS.white,
+    width: SIZES.width - 20,
     height: 60,
     marginHorizontal: 10,
     flexDirection: 'row',

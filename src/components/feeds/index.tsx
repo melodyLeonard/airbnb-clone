@@ -6,7 +6,7 @@ type Props = {
   [key: string]: any;
 };
 
-const Feed: React.FC = ({item}: Props): JSX.Element => {
+const Feed: React.FC<Props> = ({item}: Props): JSX.Element => {
   return (
     <View style={styles.container}>
       <Image
