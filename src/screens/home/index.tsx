@@ -1,13 +1,21 @@
 import React from 'react';
-import {View, ImageBackground, Text, Pressable} from 'react-native';
+import {
+  View,
+  ImageBackground,
+  Text,
+  Pressable,
+  SafeAreaView,
+} from 'react-native';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import styles from './styles';
 import {SIZES} from '../../Constants/theme/Sizes';
 import {COLORS} from '../../Constants/theme/Colors';
+import renderHeader from 'helpers/renderHeader';
 
 const HomeScreen: React.FC = (): JSX.Element => {
   return (
-    <View>
+    <SafeAreaView>
+      {renderHeader}
       <ImageBackground
         source={require('../../assets/images/wallpaper.jpg')}
         style={styles.image}>
@@ -20,7 +28,7 @@ const HomeScreen: React.FC = (): JSX.Element => {
           <Text style={styles.buttonText}>Explore nearby stays</Text>
         </Pressable>
       </ImageBackground>
-    </View>
+    </SafeAreaView>
   );
 };
 

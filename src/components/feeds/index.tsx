@@ -1,20 +1,31 @@
 import React from 'react';
-import {View, Image, Text} from 'react-native';
+import {Animated, Image, Text} from 'react-native';
+import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
 import styles from './styles';
 
 type Props = {
-  [key: string]: any;
+  item: {[key: string]: any};
+  scale: any;
+  opacity: any;
+  onPress: any;
 };
 
-const Feed: React.FC<Props> = ({item}: Props): JSX.Element => {
+const Feed: React.FC<Props> = ({
+  item,
+  scale,
+  opacity,
+  onPress,
+}: Props): JSX.Element => {
   return (
-    <View style={styles.container}>
-      <Image
-        style={styles.image}
-        source={{
-          uri: item.image,
-        }}
-      />
+    <Animated.View style={[styles.container, {transform: [{scale}], opacity}]}>
+      <TouchableWithoutFeedback onPress={onPress}>
+        <Image
+          style={styles.image}
+          source={{
+            uri: item.image,
+          }}
+        />
+      </TouchableWithoutFeedback>
       <Text style={styles.title}>
         {`${item.bed} bed ${item.bedroom} bedroom`}
       </Text>
@@ -26,7 +37,7 @@ const Feed: React.FC<Props> = ({item}: Props): JSX.Element => {
         <Text style={styles.newPrice}> ${item.newPrice}</Text> / text
       </Text>
       <Text style={styles.totalPrice}>${item.totalPrice} total</Text>
-    </View>
+    </Animated.View>
   );
 };
 

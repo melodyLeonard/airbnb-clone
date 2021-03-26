@@ -1,4 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
+import {BottomTabBarButtonProps} from '@react-navigation/bottom-tabs';
 import React from 'react';
 import {AccessibilityState, View} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
@@ -7,7 +8,7 @@ import {COLORS} from '../../Constants';
 
 type TabProps = {
   accessibilityState: AccessibilityState;
-  children: any;
+  children: BottomTabBarButtonProps;
   onPress: () => void;
 };
 
@@ -15,7 +16,7 @@ const TabBarCustomButton = ({
   accessibilityState,
   children,
   onPress,
-}: TabProps) => {
+}: TabProps): JSX.Element => {
   const isSelected = accessibilityState.selected;
 
   if (isSelected) {

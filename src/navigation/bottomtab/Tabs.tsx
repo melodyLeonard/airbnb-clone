@@ -8,7 +8,6 @@ import {COLORS, icons} from '../../Constants';
 import {OderDeliverScreen, PostsScreen, ResturantsScreen} from 'screens';
 import TabBarCustomButton from './TabBarCustomButton';
 import CustomTabBar from './CustomTabBar';
-import {AccessibilityState} from 'react-native';
 
 export type TabParamList = {
   Home: undefined;
@@ -16,6 +15,8 @@ export type TabParamList = {
   Like: undefined;
   User: undefined;
 };
+
+const ICON_SIZE: number = 25;
 
 const Tab = createBottomTabNavigator<TabParamList>();
 
@@ -37,25 +38,20 @@ const Tabs: React.FC = (): JSX.Element => {
       tabBar={props => <CustomTabBar props={props} />}>
       <Tab.Screen
         name="Home"
-        component={HomeScreen}
+        component={PostsScreen}
         options={{
           tabBarIcon: ({focused}) => (
             <Image
               source={icons.cutlery}
               resizeMode="contain"
               style={{
-                width: 25,
-                height: 25,
+                width: ICON_SIZE,
+                height: ICON_SIZE,
                 tintColor: focused ? COLORS.primary : COLORS.secondary,
               }}
             />
           ),
-          tabBarButton: props => (
-            <TabBarCustomButton
-              accessibilityState={AccessibilityState}
-              {...props}
-            />
-          ),
+          tabBarButton: props => <TabBarCustomButton {...props} />,
         }}
       />
 
@@ -68,8 +64,8 @@ const Tabs: React.FC = (): JSX.Element => {
               source={icons.search}
               resizeMode="contain"
               style={{
-                width: 25,
-                height: 25,
+                width: ICON_SIZE,
+                height: ICON_SIZE,
                 tintColor: focused ? COLORS.primary : COLORS.secondary,
               }}
             />
@@ -87,8 +83,8 @@ const Tabs: React.FC = (): JSX.Element => {
               source={icons.like}
               resizeMode="contain"
               style={{
-                width: 25,
-                height: 25,
+                width: ICON_SIZE,
+                height: ICON_SIZE,
                 tintColor: focused ? COLORS.primary : COLORS.secondary,
               }}
             />
@@ -106,8 +102,8 @@ const Tabs: React.FC = (): JSX.Element => {
               source={icons.user}
               resizeMode="contain"
               style={{
-                width: 25,
-                height: 25,
+                width: ICON_SIZE,
+                height: ICON_SIZE,
                 tintColor: focused ? COLORS.primary : COLORS.secondary,
               }}
             />
